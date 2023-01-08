@@ -5,9 +5,12 @@ go 1.19
 require (
 	github.com/ethereum/go-ethereum v1.10.26
 	github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
+	github.com/natefinch/lumberjack v2.0.0+incompatible
+	go.uber.org/zap v1.24.0
 )
 
 require (
+	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/StackExchange/wmi v0.0.0-20180116203802-5d049714c4a6 // indirect
 	github.com/btcsuite/btcd/btcec/v2 v2.3.2 // indirect
 	github.com/deckarep/golang-set v1.8.0 // indirect
@@ -21,7 +24,10 @@ require (
 	github.com/shirou/gopsutil v3.21.4-0.20210419000835-c7a38de76ee5+incompatible // indirect
 	github.com/tklauser/go-sysconf v0.3.5 // indirect
 	github.com/tklauser/numcpus v0.2.2 // indirect
+	go.uber.org/atomic v1.7.0 // indirect
+	go.uber.org/multierr v1.6.0 // indirect
 	golang.org/x/crypto v0.5.0 // indirect
 	golang.org/x/sys v0.4.0 // indirect
+	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
 )
