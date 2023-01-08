@@ -12,17 +12,21 @@ $ cd config/
 $ touch config.toml
 ```
 
-### toml 파일 작성
+### config.toml 파일 작성
 
 ```
 [Goerli]
 apikey = "wss://goerli.infura.io/ws/v3/{발급한 Api Key}"
 
-[Log]
-fpath = "./log/logfile.txt"
+[log]
+level = "debug" # debug or info
+fpath = "./logs/go-loger" # 로그가 생성될 경로 : ./logs, 로그파일명 go-loger_xxx.log
+msize = 2000    # 2g : megabytes
+mage = 7        # 7days
+mbackup = 5     # number of log files
 
 [ContractAddress]
-ca = "{트랜잭션 발생 이벤트를 구독할 스마트 컨트랙트 주소}"
+ca = "{감지할 스마트 컨트랙트 주소}"
 ```
 
 ```bash 
