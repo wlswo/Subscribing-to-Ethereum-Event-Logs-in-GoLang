@@ -11,7 +11,11 @@ type Config struct {
 		ApiKey string
 	}
 	Log struct {
-		Fpath string
+		Level   string
+		Fpath   string
+		Msize   int
+		Mage    int
+		Mbackup int
 	}
 	ContractAddress struct {
 		Ca string
