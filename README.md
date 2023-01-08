@@ -9,15 +9,17 @@ $ git clone https://github.com/wlswo/Subscribing-to-Ethereum-Event-Logs-in-GoLan
 
 ```bash
 $ cd config/
+$ touch config.toml
 ```
 
-### 
+### toml 파일 작성
 
 ```
 [Goerli]
 apikey = "wss://goerli.infura.io/ws/v3/{발급한 Api Key}"
 
-...
+[Log]
+fpath = "./log/logfile.txt"
 
 [ContractAddress]
 ca = "{트랜잭션 발생 이벤트를 구독할 스마트 컨트랙트 주소}"
