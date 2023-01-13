@@ -1,5 +1,44 @@
 package models
 
+import (
+	"context"
+	"fmt"
+	"log"
+
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+)
+
+type Model struct {
+	client   *mongo.Client
+	colBlock *mongo.Collection
+}
+
+func NewModel(mgUrl string) (*Model, error) {
+	r := &Model{}
+
+	var err error
+	if r.client, err = mongo.Connect(context.Background(), options.Client().ApplyURI(mgUrl)); err != nil {
+		return nil, err
+	} else if err := r.client.Ping(context.Background(), nil); err != nil {
+		return nil, err
+	} else {
+		db := r.client.Database("daemon")
+		r.colBlock = db.Collection("block")
+	}
+	return r, nil
+}
+
+func (p *Model) SaveBlock(block *Block) error {
+	result, err := p.colBlock.InsertOne(context.TODO(), block)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+	fmt.Printf("Insert succeed: %s\n", result.InsertedID)
+	return nil
+}
+
 type Block struct {
 	BlockHash    string        `bson:"blockHash"`
 	BlockNumber  uint64        `bson:"blockNumber"`
