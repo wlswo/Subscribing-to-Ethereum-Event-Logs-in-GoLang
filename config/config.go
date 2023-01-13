@@ -7,8 +7,8 @@ import (
 )
 
 type Config struct {
-	Goerli struct {
-		ApiKey string
+	Wemix struct {
+		Url string
 	}
 	Log struct {
 		Level   string
