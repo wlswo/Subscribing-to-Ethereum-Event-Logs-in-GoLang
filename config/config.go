@@ -20,6 +20,9 @@ type Config struct {
 	ContractAddress struct {
 		Ca string
 	}
+	DB struct {
+		Host string
+	}
 }
 
 func NewConfig(fpath string) *Config {
